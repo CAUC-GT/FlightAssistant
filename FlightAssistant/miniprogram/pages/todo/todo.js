@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// pages/todo/todo.js
 Page({
 
   /**
