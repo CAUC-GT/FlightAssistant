@@ -9,7 +9,7 @@
   background-color: #ff5252;
   margin: 0 auto;
   position: relative;
-  top: 200px;
+  top: 120px;
   padding: 5%;
   color: white;
   font: 700 36px 'simsun';
@@ -28,7 +28,7 @@
   background-color: #64b5f6;
   margin: 0 auto;
   position: relative;
-  top: 280px;
+  top: 200px;
   padding: 5%;
   color: white;
   font: 700 36px 'simsun';
@@ -51,4 +51,13 @@
 
 .h1{
   margin-bottom: 10px;
+}
+
+.title{
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25%;
+  font-size: x-large;
+  color: #546d81;
 }

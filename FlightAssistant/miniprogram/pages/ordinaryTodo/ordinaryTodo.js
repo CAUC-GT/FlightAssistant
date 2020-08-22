@@ -1,4 +1,4 @@
-// pages/addTodo/addTodo.js
+// pages/ordinaryTodo/ordinaryTodo.js
 Page({
 
   /**
@@ -6,18 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  ordinaryTodo:function (e) {
-    wx.navigateTo({
-      url: '../ordinaryTodo/ordinaryTodo',
-    })
-  },
-
-  flightTodo:function (e) {
-    wx.navigateTo({
-      url: '../flightTodo/flightTodo',
-    })
   },
 
   /**

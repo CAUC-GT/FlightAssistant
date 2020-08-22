@@ -90,13 +90,13 @@ Page({
 
   click1:function(){
     wx.navigateTo({
-      // url: '../searchFlight/searchFlight',
+      url: '../searchFlight/searchFlight',
     })
   },
 
   click2:function(){
     wx.navigateTo({
-      // url: '../searchPackage/searchPackage',
+      url: '../searchPackage/searchPackage',
     })
   },
 

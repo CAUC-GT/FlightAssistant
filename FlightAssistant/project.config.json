@@ -62,6 +62,33 @@
 					"pathName": "pages/addTodo/addTodo",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchFlight",
+					"pathName": "pages/searchFlight/searchFlight",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchPackage",
+					"pathName": "pages/searchPackage/searchPackage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ordinaryTodo",
+					"pathName": "pages/ordinaryTodo/ordinaryTodo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "flightTodo",
+					"pathName": "pages/flightTodo/flightTodo",
+					"scene": null
 				}
 			]
 		}

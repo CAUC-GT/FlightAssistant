@@ -2,7 +2,11 @@
   "pages": [
     "pages/todo/todo",
     "pages/search/search",
-    "pages/addTodo/addTodo"
+    "pages/addTodo/addTodo",
+    "pages/ordinaryTodo/ordinaryTodo",
+    "pages/flightTodo/flightTodo",
+    "pages/searchFlight/searchFlight",
+    "pages/searchPackage/searchPackage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
