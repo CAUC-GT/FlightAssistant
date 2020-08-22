@@ -1,2 +1,27 @@
-<!--pages/searchFlight/searchFlight.wxml-->
-<text>pages/searchFlight/searchFlight.wxml</text>
+<!--航班搜索界面-->
+<view class='card'>
+
+	<view class='card_title'>搜索航班</view>
+
+	<view class="row">
+		<input class="card_item" placeholder="出发地" bindinput="getFlightSrc"></input>
+		<image class="card_img" src="../../image/飞机.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+		<input class="card_item" placeholder="目的地" bindinput="getFlightDes"></input>
+	</view>
+
+	<view class="row">
+		<picker mode="date" value="{{date}}" start="2020-01-01" end="2020-12-31" bindchange="bindDateChange" style="width:100%">
+			<view class="in_row">
+				<text>起飞日期：</text>
+				<view class="picker">{{date}}</view>
+			</view>
+		</picker>
+	</view>
+
+	<view class="row">
+		<button class="btn" bindtap="sendSearchMessage">
+			搜 索
+		</button>
+	</view>
+
+</view>

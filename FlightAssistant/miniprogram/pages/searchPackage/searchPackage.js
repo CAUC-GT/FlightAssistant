@@ -1,66 +1,34 @@
-// pages/searchPackage/searchPackage.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    flightNo: "",
+    date: "2020-01-01"
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  getFlightNo: function (e) {
+    this.setData({
+      flightNo: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  sendSearchMessage: function (e) {
+    var that = this;
+    if (that.data.flightNo.length == 0) {
+      wx.showToast({
+        title: '航班号不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      // wx.navigateTo({
+      //         url: '../searchPackageResult/searchPackageResult?flight_no=' + that.data.flightNo+"-"+that.data.date.replace(/-/g,"")+"-A"
+      //     });
+    }
   }
 })

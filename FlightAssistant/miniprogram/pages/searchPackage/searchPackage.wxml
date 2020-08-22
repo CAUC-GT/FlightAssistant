@@ -1,2 +1,25 @@
-<!--pages/searchPackage/searchPackage.wxml-->
-<text>pages/searchPackage/searchPackage.wxml</text>
+<view class='card'>
+
+	<view class='card_title'>行李查询</view>
+
+	<view class="row">
+		<image class="card_img" src="../../image/行李.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+		<input class="card_item" placeholder="航班号（例：CA-3829）" bindinput="getFlightNo"></input>
+	</view>
+
+	<view class="row">
+		<picker mode="date" value="{{date}}" start="2020-01-01" end="2021-12-31" bindchange="bindDateChange" style="width:100%">
+			<view class="in_row">
+				<text>起飞日期：</text>
+				<view class="picker">{{date}}</view>
+			</view>
+		</picker>
+	</view>
+
+	<view class="row">
+		<button class="btn" bindtap="sendSearchMessage">
+			搜 索
+		</button>
+	</view>
+
+</view>
