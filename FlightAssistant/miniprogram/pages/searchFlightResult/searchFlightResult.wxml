@@ -1,0 +1,65 @@
+<!--显示航班搜索结果-->
+<view class="background" hover-class="none" hover-stop-propagation="false">
+    <view class="title" hover-class="none" hover-stop-propagation="false">航班查询结果</view>
+    <view>
+        <block wx:for="{{items}}">
+            <view class="card">
+                <view class="card_row" hover-class="none" hover-stop-propagation="false" style="margin-top: 3%;">
+                    <view class="card_item" hover-class="none" hover-stop-propagation="false">
+                        <view class="h1">
+                            {{flightSrc}}
+                        </view>
+                        <view class="h2">
+                            {{item.flight_sairport}}
+                        </view>
+
+                        <view style="margin-top:20rpx">
+                            <text class="h3" selectable="false" space="false" decode="false">
+                                预计起飞
+                            </text>
+                        </view>
+                        <view class="time">
+                            {{item.flight_stime}}
+                        </view>
+                    </view>
+                    <view class="card_center" hover-class="none" hover-stop-propagation="false">
+                        <image
+                            class="card_img"
+                            src="../../image/飞机.png"
+                            mode="heightFix"
+                            lazy-load="false"
+                            binderror=""
+                            bindload=""></image>
+                    </view>
+                    <view
+                        class="card_item"
+                        hover-class="none"
+                        hover-stop-propagation="false"
+                        style="text-align:right">
+                        <view class="h1">
+                            {{flightDes}}
+                        </view>
+                        <view class="h2">
+                            {{item.flight_eairport}}
+                        </view>
+
+                        <view style="margin-top:20rpx">
+                            <text class="h3" selectable="false" space="false" decode="false">
+                                预计到达
+                            </text>
+                        </view>
+                        <view class="time">
+                            {{item.flight_etime}}
+                        </view>
+                    </view>
+                </view>
+
+                <view class="card_row" hover-class="none" hover-stop-propagation="false" style="margin-bottom: 3%;">
+                    <view class="h3 text_item" style="margin-left:20rpx">{{item.flight_no}} |</view>
+                    <view class="h3 text_item">{{item.flight_type}} |</view>
+                    <view class="h3 text_item">{{item.flight_punrate}} |</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
