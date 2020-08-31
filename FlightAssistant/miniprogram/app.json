@@ -42,6 +42,7 @@
     "van-cell-group": "@vant/weapp/cell-group",
     "van-icon": "@vant/weapp/icon",
     "van-divider": "@vant/weapp/divider",
-    "van-datetime-picker": "@vant/weapp/datetime-picker"
+    "van-datetime-picker": "@vant/weapp/datetime-picker",
+    "van-popup": "@vant/weapp/popup"
   }
 }
