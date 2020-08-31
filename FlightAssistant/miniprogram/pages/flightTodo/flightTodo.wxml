@@ -1,7 +1,9 @@
-<van-datetime-picker
-  type="datetime"
-  value="{{ currentDate }}"
-  min-date="{{ minDate }}"
-  max-date="{{ maxDate }}"
-  bind:input="onInput"
-/>
+<van-cell title="选择起飞日期" is-link bind:click="showPopup" />
+<van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%" bind:close="onClose">
+	<van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+</van-popup>
+
+<van-cell title="选择起飞时间" is-link bind:click="showPopup2" />
+<van-popup show="{{ show2 }}" round position="bottom" custom-style="height: 40%" bind:close="onClose2">
+	<van-datetime-picker type="time" value="{{ currentTime }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:input="onInput2" />
+</van-popup>

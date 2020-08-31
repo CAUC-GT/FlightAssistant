@@ -5,17 +5,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    minHour: 10,
-    maxHour: 20,
-    minDate: new Date().getTime(),
-    maxDate: new Date(2019, 10, 1).getTime(),
+    show: false,
+    show2: false,
+    currentTime: '12:00',
+    minHour: 0,
+    maxHour: 23,
     currentDate: new Date().getTime(),
+    minDate: new Date().getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      } else if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    },
   },
 
   onInput(event) {
     this.setData({
       currentDate: event.detail,
     });
+  },
+
+  onInput2(event){
+    this.setData({
+      currentTime: event.detail,
+    });
+  },
+
+  showPopup() {
+    this.setData({ show: true });
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  showPopup2() {
+    this.setData({ show2: true });
+  },
+
+  onClose2() {
+    this.setData({ show2: false });
   },
 
   /**
