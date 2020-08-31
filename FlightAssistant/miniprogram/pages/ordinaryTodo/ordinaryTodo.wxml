@@ -1,2 +1,18 @@
-<!--pages/ordinaryTodo/ordinaryTodo.wxml-->
-<text>pages/ordinaryTodo/ordinaryTodo.wxml</text>
+<view class="container">
+	<form bindsubmit="onSubmit">
+		<input maxlength="32" name='title' placeholder="标题" placeholder-class="placeholderStyle"></input>
+		<van-divider />
+		<block wx:if="{{position}}">
+			<van-cell title="{{position}}" icon="location-o" class="position" />
+		</block>
+		<block wx:if="{{image}}">
+			<image class="img" src="{{image}}"></image>
+		</block>
+		<textarea maxlength="-1" auto-height="true" name='content' placeholder="请输入内容" class="textarea"></textarea>
+		<view class="iconBar">
+			<van-icon class="icon1" name="photo-o" size="35px" bind:click="selectImage" />
+			<van-icon class="icon2" name="location-o" size="35px" bind:click="chooseLocation" />
+			<van-button icon="success" type="info" class="icon3" form-type="submit" />
+		</view>
+	</form>
+</view>

@@ -40,6 +40,8 @@
     "van-button": "@vant/weapp/button",
     "van-cell": "@vant/weapp/cell",
     "van-cell-group": "@vant/weapp/cell-group",
-    "van-icon": "@vant/weapp/icon"
+    "van-icon": "@vant/weapp/icon",
+    "van-divider": "@vant/weapp/divider",
+    "van-datetime-picker": "@vant/weapp/datetime-picker"
   }
 }
