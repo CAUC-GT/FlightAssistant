@@ -1,2 +1,7 @@
-<!--pages/flightTodo/flightTodo.wxml-->
-<text>pages/flightTodo/flightTodo.wxml</text>
+<van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:input="onInput"
+/>
