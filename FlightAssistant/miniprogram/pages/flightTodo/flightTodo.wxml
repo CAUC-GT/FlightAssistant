@@ -1,9 +1,27 @@
-<van-cell title="选择起飞日期" is-link bind:click="showPopup" />
-<van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%" bind:close="onClose">
-	<van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}" formatter="{{ formatter }}" />
-</van-popup>
-
-<van-cell title="选择起飞时间" is-link bind:click="showPopup2" />
-<van-popup show="{{ show2 }}" round position="bottom" custom-style="height: 40%" bind:close="onClose2">
-	<van-datetime-picker type="time" value="{{ currentTime }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:input="onInput2" />
-</van-popup>
+<view>
+	<form bindsubmit="onSubmit">
+		<view class="textarea">
+			<input class="text1" name="flightno" placeholder="航班号（必填），例：CA1234"></input>
+			<van-divider />
+			<input class="text2" name="takeoff" placeholder="出发机场，例：浦东机场"></input>
+			<van-divider />
+			<input class="text3" name="land" placeholder="到达机场，例：首都机场"></input>
+			<van-divider />
+		</view>
+		<view class="select1">
+			<van-cell title="选择起飞日期" value="{{ date }}" is-link bind:click="showPopup" />
+			<van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%">
+				<van-datetime-picker type="date"bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onClose" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+			</van-popup>
+		</view>
+		<view class="select2">
+			<van-cell title="选择起飞时间" value="{{ time }}" is-link bind:click="showPopup2" />
+			<van-popup show="{{ show2 }}" round position="bottom" custom-style="height: 40%">
+				<van-datetime-picker type="time" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:input="onInput2" bind:confirm="onConfirm2" bind:cancel="onClose2" />
+			</van-popup>
+		</view>
+		<view class="button">
+			<van-button icon="success" type="info" form-type="submit" block></van-button>
+		</view>
+	</form>
+</view>
