@@ -1,10 +1,14 @@
 // pages/flightTodo/flightTodo.js
+const db = wx.cloud.database();
+const todos = db.collection("todos");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    date: '',
+    time: '',
     show: false,
     show2: false,
     currentTime: '12:00',
@@ -22,32 +26,82 @@ Page({
     },
   },
 
+  formatDate(date) {
+    date = new Date(date);
+    return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  },
+
   onInput(event) {
     this.setData({
       currentDate: event.detail,
     });
   },
 
-  onInput2(event){
+  onConfirm(event) {
+    this.setData({
+      show: false,
+      date: this.formatDate(event.detail),
+    });
+  },
+
+  onConfirm2(event) {
+    this.setData({
+      show2: false,
+      time: event.detail,
+    });
+  },
+
+  onInput2(event) {
     this.setData({
       currentTime: event.detail,
     });
   },
 
   showPopup() {
-    this.setData({ show: true });
+    this.setData({
+      show: true
+    });
   },
 
   onClose() {
-    this.setData({ show: false });
+    this.setData({
+      show: false
+    });
   },
 
   showPopup2() {
-    this.setData({ show2: true });
+    this.setData({
+      show2: true
+    });
   },
 
   onClose2() {
-    this.setData({ show2: false });
+    this.setData({
+      show2: false
+    });
+  },
+
+  onSubmit: function (event) {
+    todos.add({
+      data: {
+        flightno: event.detail.value.flightno,
+        land: event.detail.value.land,
+        takeoff: event.detail.value.takeoff,
+        takeoff_date: this.formatDate(this.data.currentDate),
+        takeoff_time: this.data.currentTime,
+      }
+    }).then(res => {
+      console.log(res._id);
+      wx.showToast({
+        title: 'Success',
+        icon: 'success',
+        success: res2 => {
+          // wx.redirectTo({
+          //   url: `../todoInfo/todoInfo?id=${res._id}`,
+          // })
+        }
+      })
+    })
   },
 
   /**
