@@ -17,7 +17,11 @@ Page({
             flightDate: options.flight_day,
         })
         wx.cloud.callFunction({
-            name:"searchByFlight"
+            name:"searchByFlight",
+            data:{
+                flight_destination: that.data.flightSrc+"-"+that.data.flightDes,
+                flight_day: that.data.flightDate,
+            }
         }).then(res => {
             console.log(res);
             that.setData({items:res.result.data});
