@@ -1,18 +1,64 @@
-// pages/history/history.js
+const db = wx.cloud.database();
+const todos = db.collection("todos");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    tasks: [],
+  },
 
+  pageDate: {
+    skip: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getData();
+  },
 
+  onPullDownRefresh: function () {
+    this.getData(res => {
+      this.pageDate.skip = 0;
+      wx.stopPullDownRefresh({
+        success: (res) => {},
+      });
+    });
+  },
+
+  onReachBottom: function () {
+    this.getData();
+  },
+
+  getData: function (callback) {
+    this.data.tasks = [];
+    if (!callback) {
+      callback = res => {}
+    }
+    wx.showLoading({
+      title: '数据加载中',
+      mask: true,
+      success: (res) => {},
+      fail: (res) => {},
+      complete: (res) => {},
+    })
+    todos.skip(this.pageDate.skip).get().then(res => {
+      let oldData = this.data.tasks;
+      this.setData({
+        tasks: oldData.concat(res.data),
+      }, res => {
+        this.pageDate.skip += 20;
+        wx.hideLoading({
+          success: (res) => {},
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+        callback();
+      })
+    })
   },
 
   /**
@@ -40,20 +86,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 

@@ -4,10 +4,16 @@
 			<van-icon class="plusIcon" name="plus" />
 		</navigator>
 	</view>
-	<van-cell-group>
+	<van-cell-group wx:if="{{tasks}}">
 		<block wx:for="{{tasks}}">
-			<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="状态" label="{{item.content}}" border="{{ false }}" />
-			<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" value="状态" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" />
+			<view wx:if="{{item.state == 1}}">
+				<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="进行中" border="{{ false }}" />
+				<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" value="候机中" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" />
+			</view>
+			<view wx:else>
+				<van-empty description="您还没有需要小助手帮忙的地方哦～" />
+			</view>
 		</block>
 	</van-cell-group>
+	<van-empty wx:else description="您还没有需要小助手帮忙的地方哦～" />
 </view>

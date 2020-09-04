@@ -96,9 +96,14 @@ Page({
         title: 'Success',
         icon: 'success',
         success: res2 => {
-          // wx.redirectTo({
-          //   url: `../todoInfo/todoInfo?id=${res._id}`,
-          // })
+          wx.switchTab({
+            url: "../todo/todo",
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
         }
       })
     })
