@@ -102,6 +102,21 @@
 					"id": -1,
 					"name": "history",
 					"pathName": "pages/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "flightTodoInfo",
+					"pathName": "pages/flightTodoInfo/flightTodoInfo",
+					"query": "id=ac5f38825f4e16b400c5b8cd0f4118df",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "ordinaryTodoInfo",
+					"pathName": "pages/ordinaryTodoInfo/ordinaryTodoInfo",
+					"query": "id=60173c665f4c6c6e0099ecf00c96f024",
 					"scene": null
 				}
 			]

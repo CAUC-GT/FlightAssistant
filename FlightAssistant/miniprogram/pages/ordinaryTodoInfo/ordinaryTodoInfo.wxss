@@ -1,0 +1,42 @@
+.container {
+  padding: 3%;
+}
+
+.textarea {
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+
+.iconBar {
+  position: fixed;
+  bottom: 50px;
+}
+
+.icon1 {
+  position: fixed;
+  left: 10px;
+}
+
+.icon2 {
+  position: fixed;
+  right: 10px;
+}
+
+.img {
+  width: 620rpx;
+  box-shadow: 0px 2px 4px 2px #DDDDDD;
+  border-width: 1rpx;
+  border-radius: 5px;
+}
+
+.c_img {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}

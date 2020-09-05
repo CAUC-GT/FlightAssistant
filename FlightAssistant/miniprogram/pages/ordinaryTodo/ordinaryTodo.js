@@ -57,6 +57,7 @@ Page({
         image: this.data.image,
         location: this.pageData.locationObj,
         state: 1,
+        process: 1,
       }
     }).then(res => {
       console.log(res._id);
