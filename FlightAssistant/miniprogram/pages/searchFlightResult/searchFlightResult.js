@@ -1,4 +1,6 @@
 // pages/searchFlightResult/searchFlightResult.js
+const db = wx.cloud.database();
+const todos = db.collection("todos");
 Page({
 
     /**

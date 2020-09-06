@@ -6,6 +6,7 @@
     "pages/ordinaryTodo/ordinaryTodo",
     "pages/flightTodo/flightTodo",
     "pages/searchFlight/searchFlight",
+    "pages/searchFlightResult/searchFlightResult",
     "pages/searchPackage/searchPackage",
     "pages/mine/mine",
     "pages/history/history",
