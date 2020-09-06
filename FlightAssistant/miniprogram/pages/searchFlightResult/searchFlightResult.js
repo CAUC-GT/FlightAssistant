@@ -83,5 +83,32 @@ Page({
     splitString: function (str) {
         arr = str.split("-");
         return arr;
+    },
+    bindtodo:function(e){
+        console.log("123");
+        todos.add({
+            data: {
+              flightno: e.data.flight_no,
+              land: e.data.flight_seairport,
+              takeoff: e.data.flight_sairport,
+              state:1,
+              landing_date:e.data.flight_day,
+              landing_time:e.data.flight_etime,
+              takeoff_date: e.data.flight_day,
+              takeoff_time: e.data.flight_stime,
+            }
+          }).then(res => {
+            console.log(res._id);
+            wx.showToast({
+              title: 'Success',
+              icon: 'success',
+              success: res2 => {
+                // wx.redirectTo({
+                //   url: `../todoInfo/todoInfo?id=${res._id}`,
+                // })
+              }
+            })
+          })
+    
     }
 })

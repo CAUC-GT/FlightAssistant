@@ -3,9 +3,9 @@
     <view class="title" hover-class="none" hover-stop-propagation="false">航班查询结果</view>
     <view>
         <block wx:for="{{items}}">
-            <view class="card">
-                <view class="card_row" hover-class="none" hover-stop-propagation="false" style="margin-top: 3%;">
-                    <view class="card_item" hover-class="none" hover-stop-propagation="false">
+            <view class="card" longpress="bindtodo">
+                <view class="card_row" hover-class="none" hover-stop-propagation="false" style="margin-top: 3%;" >
+                    <view class="card_item" hover-class="none" hover-stop-propagation="false" >
                         <view class="h1">
                             {{flightSrc}}
                         </view>
@@ -14,7 +14,7 @@
                         </view>
 
                         <view style="margin-top:20rpx">
-                            <text class="h3" selectable="false" space="false" decode="false">
+                            <text class="h3" selectable="false" space="false" decode="false" >
                                 预计起飞
                             </text>
                         </view>
