@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 15%;
+  padding-top: 15px;
+  width: 90%;
+  height: 500px;
+  box-shadow: 0px 2px 4px 2px #DDDDDD;
+  border-width: 1rpx;
+  border-radius: 5%;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.plusBtn {
+  position: fixed;
+  bottom: 200rpx;
+  left: 42%;
+  background-color: dimgray;
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+  box-shadow: 0px 2px 4px 2px #DDDDDD;
+  border-width: 1rpx;
+}
+
+.plusIcon {
+  font-size: 60rpx;
+  position: relative;
+  margin: 15px;
+  color: #fafafa;
+}
+
+.flightno{
+  font-weight: 500;
+  font-size: 80px;
+  margin-left: 15px;
+  margin-top: 80px;
+  color: dimgray;
+}
+
+.title{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 40px;
+  color: darkslategrey;
+}
+
+.info{
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.time{
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.date{
+  margin-top: 10px;
+  margin-left: 25px;
+  color: dimgray;
+}
+
+.tips{
+  margin-top: 10px;
+  margin-left: 35px;
+  margin-right: 35px;
+  color: lightslategrey;
+}

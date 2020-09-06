@@ -1,0 +1,14 @@
+<view class="container">
+	<van-cell title="{{task.title}}" value="{{task.process == '1' ? '进行中' : '已完成'}}" size="large" title-style="font-size: xx-large" />
+	<view class="textarea">{{task.content}}</view>
+	<view wx:if="{{task.image}}" class="c_img">
+		<image class="img" wx:if="{{task.image}}" src="{{task.image}}"></image>
+	</view>
+	<view>
+		<van-cell title="{{task.location.address}}{{task.location.name}}" icon="location-o" class="position" />
+	</view>
+	<view class="iconBar">
+		<van-button icon="cross" type="danger" class="icon1" bind:click="delete" />
+		<van-button icon="success" type="info" disabled="{{task.process == '0' ? true : false}}" class="icon2" bind:click="finish" />
+	</view>
+</view>

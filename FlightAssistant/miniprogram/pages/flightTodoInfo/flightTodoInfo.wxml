@@ -1,0 +1,31 @@
+<view class="container">
+	<view class="card">
+		<view class="flightno">{{task.flightno}}</view>
+		<view class="date">{{task.takeoff_date}}</view>
+		<view class="title">
+			<van-row>
+				<van-col span="12">出发地</van-col>
+				<van-col span="12">目的地</van-col>
+			</van-row>
+		</view>
+		<view class="info">
+			<van-row>
+				<van-col span="10">{{task.takeoff}}</van-col>
+				<van-col span="4">
+					<van-icon name="arrow" />
+				</van-col>
+				<van-col span="10">{{task.land}}</van-col>
+			</van-row>
+		</view>
+		<view class="time">
+			<van-row>
+				<van-col span="12">{{task.takeoff_time}}</van-col>
+				<van-col span="12">{{task.landing_time}}</van-col>
+			</van-row>
+		</view>
+		<view class="tips">小贴士：具体值机信息请查看机票或航站楼大厅电子显示屏</view>
+	</view>
+	<view class="plusBtn" bindtap="delete">
+		<van-icon class="plusIcon" name="cross" />
+	</view>
+</view>

@@ -9,13 +9,20 @@ Page({
   data: {
     date: '',
     time: '',
+    date2: '',
+    time2: '',
     show: false,
+    show3: false,
+    show4: false,
     show2: false,
     currentTime: '12:00',
+    currentTime2: '12:00',
     minHour: 0,
     maxHour: 23,
     currentDate: new Date().getTime(),
+    currentDate2: new Date().getTime(),
     minDate: new Date().getTime(),
+    minDate2: new Date().getTime(),
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
@@ -41,6 +48,7 @@ Page({
     this.setData({
       show: false,
       date: this.formatDate(event.detail),
+      minDate2: event.detail,
     });
   },
 
@@ -51,9 +59,35 @@ Page({
     });
   },
 
+  onConfirm3(event) {
+    this.setData({
+      show3: false,
+      date2: this.formatDate(event.detail),
+    });
+  },
+
+  onConfirm4(event) {
+    this.setData({
+      show4: false,
+      time2: event.detail,
+    });
+  },
+
   onInput2(event) {
     this.setData({
       currentTime: event.detail,
+    });
+  },
+
+  onInput3(event) {
+    this.setData({
+      currentDate2: event.detail,
+    });
+  },
+
+  onInput4(event) {
+    this.setData({
+      currentTime2: event.detail,
     });
   },
 
@@ -81,14 +115,41 @@ Page({
     });
   },
 
+  showPopup3() {
+    this.setData({
+      show3: true
+    });
+  },
+
+  onClose3() {
+    this.setData({
+      show3: false
+    });
+  },
+
+  showPopup4() {
+    this.setData({
+      show4: true
+    });
+  },
+
+  onClose4() {
+    this.setData({
+      show4: false
+    });
+  },
+
   onSubmit: function (event) {
     todos.add({
       data: {
         flightno: event.detail.value.flightno,
         land: event.detail.value.land,
         takeoff: event.detail.value.takeoff,
+        state: 1,
         takeoff_date: this.formatDate(this.data.currentDate),
         takeoff_time: this.data.currentTime,
+        landing_date: this.formatDate(this.data.currentDate2),
+        landing_time: this.data.currentTime2,
       }
     }).then(res => {
       console.log(res._id);
@@ -96,9 +157,14 @@ Page({
         title: 'Success',
         icon: 'success',
         success: res2 => {
-          // wx.redirectTo({
-          //   url: `../todoInfo/todoInfo?id=${res._id}`,
-          // })
+          wx.switchTab({
+            url: "../todo/todo",
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
+          })
         }
       })
     })

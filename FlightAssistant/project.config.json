@@ -96,6 +96,28 @@
 					"id": -1,
 					"name": "mine",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "history",
+					"pathName": "pages/history/history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "flightTodoInfo",
+					"pathName": "pages/flightTodoInfo/flightTodoInfo",
+					"query": "id=ac5f38825f54a6880114d353791170b3",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "ordinaryTodoInfo",
+					"pathName": "pages/ordinaryTodoInfo/ordinaryTodoInfo",
+					"query": "",
 					"scene": null
 				}
 			]

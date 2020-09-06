@@ -1,1 +1,44 @@
-/* pages/help/help.wxss */
+page{ 
+  height: 100%; 
+}
+
+ .container{
+  width: 100%;
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+ }
+
+ .helpview{
+  width: 90%;
+  height: 95%; 
+  display: flex; 
+  flex-direction: column; 
+  margin: 15px 15px 15px 15px;
+  background-color: whitesmoke;
+  padding: 15px; 
+  box-sizing: border-box; 
+  vertical-align: top;
+  border-radius: 10px;
+ }
+
+ .h1{
+  font-size: xx-large;
+  margin-top: 240px;
+}
+
+.p1{
+  margin-top: 40px;
+  font-size: larger;
+  text-indent: 80rpx;
+  text-align: left;
+}
+
+.p2{
+  margin-top: 20px;
+  font-size: medium;
+  text-indent: 80rpx;
+  text-align: left;
+}

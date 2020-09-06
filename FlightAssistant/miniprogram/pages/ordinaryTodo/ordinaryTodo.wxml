@@ -6,7 +6,9 @@
 			<van-cell title="{{position}}" icon="location-o" class="position" />
 		</block>
 		<block wx:if="{{image}}">
-			<image class="img" src="{{image}}"></image>
+			<view class="c_img">
+				<image class="img" src="{{image}}"></image>
+			</view>
 		</block>
 		<textarea maxlength="-1" auto-height="true" name='content' placeholder="请输入内容" class="textarea"></textarea>
 		<view class="iconBar">

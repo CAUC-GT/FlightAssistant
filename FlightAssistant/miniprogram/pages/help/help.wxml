@@ -1,2 +1,8 @@
-<!--pages/help/help.wxml-->
-<text>pages/help/help.wxml</text>
+<view class="container">
+    <view class="helpview">
+        <label class="h1">帮助文档</label>
+        <label class="p1">如您在使用中遇到了问题，欢迎您的问题反馈！感谢您的使用！</label>
+        <label class="p2">联系方式：邮箱地址</label>
+        <label class="p2">sepemberman@outlook.com</label>
+    </view>
+</view>

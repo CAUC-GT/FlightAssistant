@@ -10,7 +10,9 @@
     "pages/searchPackage/searchPackage",
     "pages/mine/mine",
     "pages/history/history",
-    "pages/help/help"
+    "pages/help/help",
+    "pages/ordinaryTodoInfo/ordinaryTodoInfo",
+    "pages/flightTodoInfo/flightTodoInfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -56,6 +58,7 @@
     "van-popup": "@vant/weapp/popup",
     "van-image": "@vant/weapp/image",
     "van-row": "@vant/weapp/row",
-    "van-col": "@vant/weapp/col"
+    "van-col": "@vant/weapp/col",
+    "van-empty": "@vant/weapp/empty"
   }
 }
