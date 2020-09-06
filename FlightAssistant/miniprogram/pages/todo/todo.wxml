@@ -4,16 +4,13 @@
 			<van-icon class="plusIcon" name="plus" />
 		</navigator>
 	</view>
-	<van-cell-group wx:if="{{tasks}}">
+	<van-empty wx:if="{{tasks.length == 0}}" description="您还没有需要小助手帮忙的地方哦～" />
+	<van-cell-group wx:else>
 		<block wx:for="{{tasks}}">
-			<view wx:if="{{item.state == 1}}">
-				<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="进行中" border="{{ false }}" link-type="navigateTo" url="../ordinaryTodoInfo/ordinaryTodoInfo?id={{item._id}}" />
+			<view>
+				<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="{{item.process == '1' ? '进行中' : '已完成'}}" border="{{ false }}" link-type="navigateTo" url="../ordinaryTodoInfo/ordinaryTodoInfo?id={{item._id}}" />
 				<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" value="候机中" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" link-type="navigateTo" url="../flightTodoInfo/flightTodoInfo?id={{item._id}}" />
-			</view>
-			<view wx:else>
-				<van-empty description="您还没有需要小助手帮忙的地方哦～" />
 			</view>
 		</block>
 	</van-cell-group>
-	<van-empty wx:else description="您还没有需要小助手帮忙的地方哦～" />
 </view>

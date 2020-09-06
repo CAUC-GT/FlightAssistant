@@ -11,13 +11,25 @@
 		<view class="select1">
 			<van-cell title="选择起飞日期" value="{{ date }}" is-link bind:click="showPopup" />
 			<van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%">
-				<van-datetime-picker type="date"bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onClose" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+				<van-datetime-picker type="date" bind:input="onInput" bind:confirm="onConfirm" bind:cancel="onClose" min-date="{{ minDate }}" formatter="{{ formatter }}" />
 			</van-popup>
 		</view>
-		<view class="select2">
+		<view class="select1">
 			<van-cell title="选择起飞时间" value="{{ time }}" is-link bind:click="showPopup2" />
 			<van-popup show="{{ show2 }}" round position="bottom" custom-style="height: 40%">
 				<van-datetime-picker type="time" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:input="onInput2" bind:confirm="onConfirm2" bind:cancel="onClose2" />
+			</van-popup>
+		</view>
+		<view class="select1">
+			<van-cell title="选择降落日期" value="{{ date2 }}" is-link bind:click="showPopup3" />
+			<van-popup show="{{ show3 }}" round position="bottom" custom-style="height: 40%">
+				<van-datetime-picker type="date" bind:input="onInput3" bind:confirm="onConfirm3" bind:cancel="onClose3" min-date="{{ minDate2 }}" formatter="{{ formatter }}" />
+			</van-popup>
+		</view>
+		<view class="select1">
+			<van-cell title="选择降落时间" value="{{ time2 }}" is-link bind:click="showPopup4" />
+			<van-popup show="{{ show4 }}" round position="bottom" custom-style="height: 40%">
+				<van-datetime-picker type="time" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:input="onInput4" bind:confirm="onConfirm4" bind:cancel="onClose4" />
 			</van-popup>
 		</view>
 		<view class="button">

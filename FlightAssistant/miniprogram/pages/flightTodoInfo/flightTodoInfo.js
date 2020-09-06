@@ -11,7 +11,25 @@ Page({
   },
 
   pageData: {
+    id: null
+  },
 
+  delete: function (e) {
+    todos.doc(this.pageData.id).update({
+      data: {
+        state: 0,
+      },
+      success: function (res) {
+        wx.switchTab({
+          url: "../todo/todo",
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }
+        })
+      }
+    })
   },
 
   /**

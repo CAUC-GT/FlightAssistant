@@ -1,18 +1,15 @@
 <view>
-	<view wx:if="{{tasks}}">
+	<view wx:if="{{tasks.length == 0}}">
+		<van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="您还没有被回收的待办哦～" />
+	</view>
+	<view wx:else>
 		<van-cell-group>
 			<block wx:for="{{tasks}}">
-				<view wx:if="{{item.state == 0}}">
+				<view>
 					<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" border="{{ false }}" />
 					<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" />
 				</view>
-				<view wx:else>
-					<van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="您还没有被回收的待办哦～" />
-				</view>
 			</block>
 		</van-cell-group>
-	</view>
-	<view wx:else>
-		<van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="您还没有被回收的待办哦～" />
 	</view>
 </view>

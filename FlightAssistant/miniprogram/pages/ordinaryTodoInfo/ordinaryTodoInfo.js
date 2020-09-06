@@ -10,8 +10,44 @@ Page({
     task: {}
   },
 
-  pageData:{
+  pageData: {
+    id: null
+  },
 
+  finish: function (e) {
+    todos.doc(this.pageData.id).update({
+      data: {
+        process: 0,
+      },
+      success: function (res) {
+        wx.switchTab({
+          url: "../todo/todo",
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }
+        })
+      }
+    })
+  },
+
+  delete: function (e) {
+    todos.doc(this.pageData.id).update({
+      data: {
+        state: 0,
+      },
+      success: function (res) {
+        wx.switchTab({
+          url: "../todo/todo",
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -20,7 +56,6 @@ Page({
   onLoad: function (options) {
     this.pageData.id = options.id;
     todos.doc(options.id).get().then(res => {
-      console.log(res);
       this.setData({
         task: res.data,
       })

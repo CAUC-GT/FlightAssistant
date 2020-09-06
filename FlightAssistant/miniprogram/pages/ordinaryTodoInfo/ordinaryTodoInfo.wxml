@@ -8,7 +8,7 @@
 		<van-cell title="{{task.location.address}}{{task.location.name}}" icon="location-o" class="position" />
 	</view>
 	<view class="iconBar">
-		<van-button icon="cross" type="danger" class="icon1" />
-		<van-button icon="success" type="info" class="icon2" />
+		<van-button icon="cross" type="danger" class="icon1" bind:click="delete" />
+		<van-button icon="success" type="info" disabled="{{task.process == '0' ? true : false}}" class="icon2" bind:click="finish" />
 	</view>
 </view>

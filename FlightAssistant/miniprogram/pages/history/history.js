@@ -45,7 +45,9 @@ Page({
       fail: (res) => {},
       complete: (res) => {},
     })
-    todos.skip(this.pageDate.skip).get().then(res => {
+    todos.skip(this.pageDate.skip).where({
+      state: 0,
+    }).get().then(res => {
       let oldData = this.data.tasks;
       this.setData({
         tasks: oldData.concat(res.data),

@@ -35,7 +35,7 @@ Page({
   },
 
   getData: function (callback) {
-    this.data.tasks=[];
+    this.data.tasks = [];
     if (!callback) {
       callback = res => {}
     }
@@ -46,20 +46,23 @@ Page({
       fail: (res) => {},
       complete: (res) => {},
     })
-    todos.skip(this.pageDate.skip).get().then(res => {
-      let oldData = this.data.tasks;
-      this.setData({
-        tasks: oldData.concat(res.data),
-      }, res => {
-        this.pageDate.skip += 20;
-        wx.hideLoading({
-          success: (res) => {},
-          fail: (res) => {},
-          complete: (res) => {},
-        })
-        callback();
+    todos.skip(this.pageDate.skip).where({
+        state: 1,
       })
-    })
+      .get().then(res => {
+        let oldData = this.data.tasks;
+        this.setData({
+          tasks: oldData.concat(res.data),
+        }, res => {
+          this.pageDate.skip += 20;
+          wx.hideLoading({
+            success: (res) => {},
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+          callback();
+        })
+      })
   },
 
   /**
@@ -73,7 +76,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
