@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/init/init",
     "pages/todo/todo",
     "pages/search/search",
     "pages/addTodo/addTodo",

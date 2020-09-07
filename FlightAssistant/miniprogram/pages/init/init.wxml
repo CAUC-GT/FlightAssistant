@@ -1,0 +1,4 @@
+<view>
+	<image class="init_img" src="../../image/纸飞机.png"></image>
+	<van-button plain type="primary" size="large" class="btn" open-type="getUserInfo" bindgetuserinfo="getUser">授权登录</van-button>
+</view>
