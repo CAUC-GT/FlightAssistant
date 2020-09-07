@@ -1,21 +1,39 @@
-// pages/mine/mine.js
+// pages/init/init.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: "",
-    nickName: "",
+
+  },
+
+  getUser: function (e) {
+    wx.setStorageSync('avatarUrl', e.detail.userInfo.avatarUrl);
+    wx.setStorageSync('nickName', e.detail.userInfo.nickName);
+    wx.switchTab({
+      url: '../todo/todo',
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      avatarUrl: wx.getStorageSync('avatarUrl'),
-      nickName: wx.getStorageSync('nickName'),
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (e) {
+              wx.setStorageSync('avatarUrl', e.userInfo.avatarUrl);
+              wx.setStorageSync('nickName', e.userInfo.nickName);
+              wx.switchTab({
+                url: '../todo/todo',
+              });
+            }
+          })
+        }
+      }
     })
   },
 

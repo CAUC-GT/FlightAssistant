@@ -2,14 +2,11 @@
 	<view class="card">
 		<van-row>
 			<van-col span="8">
-				<van-image round fit="cover" width="5rem" height="5rem" class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+				<van-image round fit="cover" width="5rem" height="5rem" class="avatar" src="{{avatarUrl}}" />
 			</van-col>
 			<van-col span="14" offset="2">
 				<van-row>
-					<text class="name">用户名:</text>
-				</van-row>
-				<van-row>
-					<text class="id">微信号:</text>
+					<text class="name">用户名:{{nickName}}</text>
 				</van-row>
 			</van-col>
 		</van-row>
@@ -22,6 +19,8 @@
 	</view>
 
 	<view class="enter2">
-		<van-cell title="退出登录" title-style="color:red"/>
+		<navigator open-type="exit" target="miniProgram">
+			<van-cell title="退出" title-style="color:red" />
+		</navigator>
 	</view>
 </view>
