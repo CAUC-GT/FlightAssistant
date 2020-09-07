@@ -6,12 +6,15 @@ Page({
     /**
    * 页面的初始数据
    */
-    data: {},
+    data: {
+        items:[]
+    },
 
     /**
    * 生命周期函数--监听页面加载
    */
     onLoad: function (options) {
+        console.log(options);
         var that = this;
         that.setData({ //this.setData的方法用于把传递过来的id转化成小程序模板语言
             flightSrc: options.flight_src,
@@ -87,17 +90,17 @@ Page({
         return arr;
     },
     bindtodo:function(e){
-        console.log("123");
+        console.log(e.currentTarget.dataset.id);
         todos.add({
             data: {
-              flightno: e.data.flight_no,
-              land: e.data.flight_seairport,
-              takeoff: e.data.flight_sairport,
+              flightno: e.currentTarget.dataset.id.flight_no,
+              land: e.currentTarget.dataset.id.flight_eairport,
+              takeoff: e.currentTarget.dataset.id.flight_sairport,
               state:1,
-              landing_date:e.data.flight_day,
-              landing_time:e.data.flight_etime,
-              takeoff_date: e.data.flight_day,
-              takeoff_time: e.data.flight_stime,
+              landing_date:e.currentTarget.dataset.id.flight_day,
+              landing_time:e.currentTarget.dataset.id.flight_etime,
+              takeoff_date: e.currentTarget.dataset.id.flight_day,
+              takeoff_time: e.currentTarget.dataset.id.flight_stime,
             }
           }).then(res => {
             console.log(res._id);

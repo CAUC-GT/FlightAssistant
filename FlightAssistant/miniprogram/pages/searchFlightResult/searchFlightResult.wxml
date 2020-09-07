@@ -3,7 +3,7 @@
     <view class="title" hover-class="none" hover-stop-propagation="false" >航班查询结果</view>
     <view>
         <block wx:for="{{items}}">
-            <view class="card" bindlongpress="bindtodo">
+            <view class="card" data-id="{{item}}" bindlongpress="bindtodo">
                 <view class="card_row" hover-class="none" hover-stop-propagation="false" style="margin-top: 3%;" >
                     <view class="card_item" hover-class="none" hover-stop-propagation="false" >
                         <view class="h1">
