@@ -18,7 +18,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云航班小助手",
+    "navigationBarTitleText": "云航助手",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
