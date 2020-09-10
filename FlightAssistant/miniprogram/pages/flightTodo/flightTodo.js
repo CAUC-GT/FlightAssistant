@@ -1,6 +1,7 @@
 // pages/flightTodo/flightTodo.js
 const db = wx.cloud.database();
 const todos = db.collection("todos");
+const tmpId = 'T5Go5dI7ZA9PWoy9DrdHlH2bwKrgv1jSdbb88dtL5Kc';
 Page({
 
   /**
@@ -140,6 +141,51 @@ Page({
   },
 
   onSubmit: function (event) {
+    let date0 = new Date(new Date(this.data.date + " " + this.data.time + ":00").getTime() - 7200000);
+    const item = {
+      thing10: {
+        value: "航班行程提醒" + event.detail.value.flightno
+      },
+      thing1: {
+        value: "请提早两个小时到机场进行值机哦"
+      },
+      date2: {
+        value: this.formatDate(this.data.currentDate) + " " + this.data.currentTime
+      },
+      thing13: {
+        value: "请关注机场的截止值机时间及时办理值机手续"
+      }
+    }
+    wx.requestSubscribeMessage({
+      tmplIds: [tmpId],
+      success(res) {
+        if (res.errMsg === 'requestSubscribeMessage:ok') {
+          wx.showLoading({
+            title: '订阅中',
+            mask: true
+          })
+          wx.cloud.callFunction({
+            name: 'subscribe',
+            data: {
+              data: item,
+              date: date0,
+              templateId: tmpId,
+            },
+          }).then(() => {
+            wx.hideLoading();
+            wx.showToast({
+              title: '订阅成功',
+            });
+          }).catch((e) => {
+            console.log(e);
+            wx.showToast({
+              title: '订阅失败',
+              icon: 'none'
+            })
+          })
+        }
+      }
+    })
     todos.add({
       data: {
         flightno: event.detail.value.flightno,
@@ -152,7 +198,6 @@ Page({
         landing_time: this.data.currentTime2,
       }
     }).then(res => {
-      console.log(res._id);
       wx.showToast({
         title: 'Success',
         icon: 'success',
