@@ -52,6 +52,7 @@ Page({
   onSubmit: function (event) {
     todos.add({
       data: {
+        type: 0,
         title: event.detail.value.title,
         content: event.detail.value.content,
         image: this.data.image,

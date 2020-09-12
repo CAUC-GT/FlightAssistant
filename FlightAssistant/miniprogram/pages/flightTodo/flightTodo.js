@@ -142,6 +142,7 @@ Page({
 
   onSubmit: function (event) {
     let date0 = new Date(new Date(this.data.date + " " + this.data.time + ":00").getTime() - 7200000);
+    var timestamp = new Date(this.data.date + " " + this.data.time + ":00").getTime();
     const item = {
       thing10: {
         value: "航班行程提醒" + event.detail.value.flightno
@@ -188,10 +189,13 @@ Page({
     })
     todos.add({
       data: {
+        type: 1,
         flightno: event.detail.value.flightno,
         land: event.detail.value.land,
         takeoff: event.detail.value.takeoff,
         state: 1,
+        process: 1,
+        takeoff_timestamp: timestamp,
         takeoff_date: this.formatDate(this.data.currentDate),
         takeoff_time: this.data.currentTime,
         landing_date: this.formatDate(this.data.currentDate2),
