@@ -1,6 +1,7 @@
 // pages/ordinaryTodo/ordinaryTodo.js
 const db = wx.cloud.database();
 const todos = db.collection("todos");
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -50,32 +51,36 @@ Page({
   },
 
   onSubmit: function (event) {
-    todos.add({
-      data: {
-        type: 0,
-        title: event.detail.value.title,
-        content: event.detail.value.content,
-        image: this.data.image,
-        location: this.pageData.locationObj,
-        state: 1,
-        process: 1,
-      }
-    }).then(res => {
-      console.log(res._id);
-      wx.showToast({
-        title: 'Success',
-        icon: 'success',
-        success: res2 => {
-          wx.switchTab({
-            url: "../todo/todo",
-            success: function (e) {
-              var page = getCurrentPages().pop();
-              if (page == undefined || page == null) return;
-              page.onLoad();
-            }
-          })
+    if (event.detail.value.title.length == 0) {
+      Toast.fail('请输入标题');
+    } else {
+      todos.add({
+        data: {
+          type: 0,
+          title: event.detail.value.title,
+          content: event.detail.value.content,
+          image: this.data.image,
+          location: this.pageData.locationObj,
+          state: 1,
+          process: 1,
         }
+      }).then(res => {
+        console.log(res._id);
+        wx.showToast({
+          title: 'Success',
+          icon: 'success',
+          success: res2 => {
+            wx.switchTab({
+              url: "../todo/todo",
+              success: function (e) {
+                var page = getCurrentPages().pop();
+                if (page == undefined || page == null) return;
+                page.onLoad();
+              }
+            })
+          }
+        })
       })
-    })
+    }
   }
 })
