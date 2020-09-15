@@ -17,7 +17,7 @@ Page({
       flight_no: options.flight_no
     })
     wx.cloud.callFunction({
-      name:"searchPackage",
+      name:"searchByPackage",
       data:{
           ffid:that.data.flight_no,
       }

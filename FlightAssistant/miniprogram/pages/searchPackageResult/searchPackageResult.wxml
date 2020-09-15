@@ -5,17 +5,17 @@
         <block wx:for="{{items}}">
             <view class="card">
                 <view class="card_row" hover-class="none" hover-stop-propagation="false">
-                    <image class="card_img" src="../img/航站楼.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="card_img" src="../../image/航站楼.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
                     <view class="h2 text_center">航站楼:</view>
                     <view class="h2 text_center">{{item.btsc}}</view>
                 </view>
                 <view class="card_row" hover-class="none" hover-stop-propagation="false">
-                    <image class="card_img" src="../img/行李.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="card_img" src="../../image/行李结果.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
                     <view class="h2 text_center">转盘号:</view>
                     <view class="h2 text_center">{{item.code}}</view>
                 </view>
                 <view class="card_row" hover-class="none" hover-stop-propagation="false">
-                    <image class="card_img" src="../img/时间.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="card_img" src="../../image/时间.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
                     <view class="h2 text_center">开始时间:</view>
                     <view class="h2 text_center">{{item.estr}}</view>
                 </view>
@@ -23,7 +23,7 @@
                     <image class="card_img" src="../img/向下.png" mode="widthFix" style="margin-left:65%;width: 10%;"></image>
                 </view> -->
                 <view class="card_row" hover-class="none" hover-stop-propagation="false">
-                    <image class="card_img" src="../img/时间.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <image class="card_img" src="../../image/时间.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
                     <view class="h2 text_center">结束时间:</view>
                     <view class="h2 text_center">{{item.eend}}</view>
                 </view>
