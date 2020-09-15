@@ -26,9 +26,9 @@ Page({
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //         url: '../searchPackageResult/searchPackageResult?flight_no=' + that.data.flightNo+"-"+that.data.date.replace(/-/g,"")+"-A"
-      //     });
+      wx.navigateTo({
+              url: '../searchPackageResult/searchPackageResult?flight_no=' + that.data.flightNo+"-"+that.data.date.replace(/-/g,"")+"-A"
+          });
     }
   }
 })

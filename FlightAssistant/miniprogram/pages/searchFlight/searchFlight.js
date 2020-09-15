@@ -34,10 +34,10 @@ Page({
         duration: 2000
       })
     } else {
-      // wx.navigateTo({
-      //   url: '../searchFlightResult/searchFlightResult?flight_src=' + that.data.flightSrc +
-      //     "&flight_des=" + that.data.flightDes + '&flight_day=' + that.data.date
-      // });
+      wx.navigateTo({
+        url: '../searchFlightResult/searchFlightResult?flight_src=' + that.data.flightSrc +
+          "&flight_des=" + that.data.flightDes + '&flight_day=' + that.data.date
+      });
     }
   }
 })
