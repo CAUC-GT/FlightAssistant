@@ -8,8 +8,8 @@
 	<van-cell-group wx:else>
 		<block wx:for="{{tasks}}">
 			<view>
-				<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="{{item.process == '1' ? '进行中' : '已完成'}}" border="{{ false }}" link-type="navigateTo" url="../ordinaryTodoInfo/ordinaryTodoInfo?id={{item._id}}" />
-				<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" value="候机中" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" link-type="navigateTo" url="../flightTodoInfo/flightTodoInfo?id={{item._id}}" />
+				<van-cell wx:if="{{item.title}}" icon="todo-list-o" title="{{item.title}}" value="{{item.process == '1' ? '进行中' : '行程已提醒'}}" border="{{ false }}" link-type="navigateTo" url="../ordinaryTodoInfo/ordinaryTodoInfo?id={{item._id}}" />
+				<van-cell wx:if="{{item.flightno}}" icon="exchange" title="您将要乘坐的航班：{{item.flightno}}" value="{{item.process == '1' ? '候机中' : '已起飞'}}" label="起飞机场：{{item.takeoff}}  到达机场：{{item.land}}    起飞时间：{{item.takeoff_date}} {{item.takeoff_time}}" border="{{ false }}" link-type="navigateTo" url="../flightTodoInfo/flightTodoInfo?id={{item._id}}" />
 			</view>
 		</block>
 	</van-cell-group>

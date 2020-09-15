@@ -2,6 +2,7 @@
 const db = wx.cloud.database();
 const todos = db.collection("todos");
 const tmpId = 'T5Go5dI7ZA9PWoy9DrdHlH2bwKrgv1jSdbb88dtL5Kc';
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -141,78 +142,86 @@ Page({
   },
 
   onSubmit: function (event) {
-    let date0 = new Date(new Date(this.data.date + " " + this.data.time + ":00").getTime() - 7200000);
-    const item = {
-      thing10: {
-        value: "航班行程提醒" + event.detail.value.flightno
-      },
-      thing1: {
-        value: "请提早两个小时到机场进行值机哦"
-      },
-      date2: {
-        value: this.formatDate(this.data.currentDate) + " " + this.data.currentTime
-      },
-      thing13: {
-        value: "请关注机场的截止值机时间及时办理值机手续"
-      }
-    }
-    wx.requestSubscribeMessage({
-      tmplIds: [tmpId],
-      success(res) {
-        if (res.errMsg === 'requestSubscribeMessage:ok') {
-          wx.showLoading({
-            title: '订阅中',
-            mask: true
-          })
-          wx.cloud.callFunction({
-            name: 'subscribe',
-            data: {
-              data: item,
-              date: date0,
-              templateId: tmpId,
-            },
-          }).then(() => {
-            wx.hideLoading();
-            wx.showToast({
-              title: '订阅成功',
-            });
-          }).catch((e) => {
-            console.log(e);
-            wx.showToast({
-              title: '订阅失败',
-              icon: 'none'
-            })
-          })
+    if (this.data.date.length == 0 || this.data.time.length == 0 || this.data.date2.length == 0 || this.data.time2.length == 0 || event.detail.value.flightno.length == 0 || event.detail.value.land.length == 0 || event.detail.value.takeoff.length == 0) {
+      Toast.fail('请填写完整内容');
+    } else {
+      let date0 = new Date(new Date(this.data.date + " " + this.data.time + ":00").getTime() - 7200000);
+      var timestamp = new Date(this.data.date + " " + this.data.time + ":00").getTime();
+      const item = {
+        thing10: {
+          value: "航班行程提醒" + event.detail.value.flightno
+        },
+        thing1: {
+          value: "请提早两个小时到机场进行值机哦"
+        },
+        date2: {
+          value: this.formatDate(this.data.currentDate) + " " + this.data.currentTime
+        },
+        thing13: {
+          value: "请关注机场的截止值机时间及时办理值机手续"
         }
       }
-    })
-    todos.add({
-      data: {
-        flightno: event.detail.value.flightno,
-        land: event.detail.value.land,
-        takeoff: event.detail.value.takeoff,
-        state: 1,
-        takeoff_date: this.formatDate(this.data.currentDate),
-        takeoff_time: this.data.currentTime,
-        landing_date: this.formatDate(this.data.currentDate2),
-        landing_time: this.data.currentTime2,
-      }
-    }).then(res => {
-      wx.showToast({
-        title: 'Success',
-        icon: 'success',
-        success: res2 => {
-          wx.switchTab({
-            url: "../todo/todo",
-            success: function (e) {
-              var page = getCurrentPages().pop();
-              if (page == undefined || page == null) return;
-              page.onLoad();
-            }
-          })
+      wx.requestSubscribeMessage({
+        tmplIds: [tmpId],
+        success(res) {
+          if (res.errMsg === 'requestSubscribeMessage:ok') {
+            wx.showLoading({
+              title: '订阅中',
+              mask: true
+            })
+            wx.cloud.callFunction({
+              name: 'subscribe',
+              data: {
+                data: item,
+                date: date0,
+                templateId: tmpId,
+              },
+            }).then(() => {
+              wx.hideLoading();
+              wx.showToast({
+                title: '订阅成功',
+              });
+            }).catch((e) => {
+              console.log(e);
+              wx.showToast({
+                title: '订阅失败',
+                icon: 'none'
+              })
+            })
+          }
         }
       })
-    })
+      todos.add({
+        data: {
+          type: 1,
+          flightno: event.detail.value.flightno,
+          land: event.detail.value.land,
+          takeoff: event.detail.value.takeoff,
+          state: 1,
+          process: 1,
+          takeoff_timestamp: timestamp,
+          takeoff_date: this.formatDate(this.data.currentDate),
+          takeoff_time: this.data.currentTime,
+          landing_date: this.formatDate(this.data.currentDate2),
+          landing_time: this.data.currentTime2,
+        }
+      }).then(res => {
+        wx.showToast({
+          title: 'Success',
+          icon: 'success',
+          success: res2 => {
+            wx.switchTab({
+              url: "../todo/todo",
+              success: function (e) {
+                var page = getCurrentPages().pop();
+                if (page == undefined || page == null) return;
+                page.onLoad();
+              }
+            })
+          }
+        })
+      })
+    }
   },
 
   /**

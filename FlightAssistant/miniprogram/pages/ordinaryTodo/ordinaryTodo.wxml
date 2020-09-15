@@ -18,3 +18,4 @@
 		</view>
 	</form>
 </view>
+<van-toast id="van-toast" />

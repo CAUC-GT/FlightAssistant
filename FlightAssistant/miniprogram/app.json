@@ -61,6 +61,7 @@
     "van-image": "@vant/weapp/image",
     "van-row": "@vant/weapp/row",
     "van-col": "@vant/weapp/col",
-    "van-empty": "@vant/weapp/empty"
+    "van-empty": "@vant/weapp/empty",
+    "van-toast": "@vant/weapp/toast"
   }
 }
