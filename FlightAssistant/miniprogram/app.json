@@ -50,6 +50,11 @@
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
+  "permission":{
+    "scope.userLocation":{
+      "desc":"您的位置信息将用来添加待办"
+    }
+  },
   "usingComponents": {
     "van-button": "@vant/weapp/button",
     "van-cell": "@vant/weapp/cell",
