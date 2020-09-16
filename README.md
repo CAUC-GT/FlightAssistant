@@ -1,7 +1,7 @@
 # 云航助手（FlightAssistant）
 ![enter image description here](https://img.shields.io/badge/javascript-100%25-blue)![enter image description here](https://img.shields.io/badge/license-MIT-green)![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
 
-![云航助手](https://raw.githubusercontent.com/CAUC-GT/FlightAssistant/master/FlightAssistant/miniprogram/image/%E7%BA%B8%E9%A3%9E%E6%9C%BA.png)
+![云航助手](https://raw.githubusercontent.com/CAUC-GT/FlightAssistant/master/FlightAssistant/miniprogram/image/paperplane.png)
 该开源项目为基于腾讯云的小程序云开发项目“云航助手（FlightAssistant）”。
 ## 内容列表
 
