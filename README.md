@@ -2,6 +2,7 @@
 ![enter image description here](https://img.shields.io/badge/javascript-100%25-blue)![enter image description here](https://img.shields.io/badge/license-MIT-green)![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
 
 ![云航助手](https://raw.githubusercontent.com/CAUC-GT/FlightAssistant/master/FlightAssistant/miniprogram/image/paperplane.png)
+
 该开源项目为基于腾讯云的小程序云开发项目“云航助手（FlightAssistant）”。
 ## 内容列表
 
@@ -22,6 +23,7 @@
 
 ## 开发者
 [@Sylar47](https://github.com/Sylar47)
+
 [@XY-guoCAUC](https://github.com/XY-guoCAUC)
 
 ## 如何贡献
