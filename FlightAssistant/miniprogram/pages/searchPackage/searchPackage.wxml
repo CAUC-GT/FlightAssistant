@@ -3,7 +3,7 @@
 	<view class='card_title'>行李查询</view>
 
 	<view class="row">
-		<image class="card_img" src="../../image/行李.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+		<image class="card_img" src="/image/package.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
 		<input class="card_item" placeholder="航班号（例：CA-3829）" bindinput="getFlightNo"></input>
 	</view>
 

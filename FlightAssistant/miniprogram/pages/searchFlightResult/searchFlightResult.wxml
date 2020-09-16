@@ -25,7 +25,7 @@
                     <view class="card_center" hover-class="none" hover-stop-propagation="false">
                         <image
                             class="card_img"
-                            src="../../image/飞机.png"
+                            src="/image/plane.png"
                             mode="heightFix"
                             lazy-load="false"
                             binderror=""

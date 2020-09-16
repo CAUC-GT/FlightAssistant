@@ -1,4 +1,5 @@
 <view>
-	<image class="init_img" src="../../image/纸飞机.png"></image>
+	<image class="init_img" src="/image/paperplane.png"></image>
 	<van-button plain type="primary" size="large" class="btn" open-type="getUserInfo" bindgetuserinfo="getUser">授权登录</van-button>
+	<van-button plain type="info" size="large" class="btn2" bind:click="skip" >暂不登录</van-button>
 </view>
