@@ -16,6 +16,12 @@ Page({
     });
   },
 
+  skip: function (e) {
+    wx.switchTab({
+      url: '../todo/todo',
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-      
+
   },
 
   /**
@@ -17,32 +17,16 @@ Page({
       flight_no: options.flight_no
     })
     wx.cloud.callFunction({
-      name:"searchByPackage",
-      data:{
-          ffid:that.data.flight_no,
+      name: "searchByPackage",
+      data: {
+        ffid: that.data.flight_no,
       }
-  }).then(res => {
+    }).then(res => {
       console.log(res);
-      that.setData({items:res.result.data});
+      that.setData({
+        items: res.result.data
+      });
     })
-    // wx.request({
-    //     url: "http://114.116.32.124:9000/findPackage",
-    //     method: 'get',
-    //     data: {
-    //       ffid:that.data.flight_no,
-    //       fatt:"",
-    //       btid:"",
-    //       code:"",
-    //       btsc:""
-    //     },
-    //     header: {
-    //         'content-type': 'application/x-www-form-urlencoded' // 默认值
-    //     },
-    //     success(res) {
-    //         that.setData({items: res.data});
-    //         console.log(that.data.items);
-    //     }
-    // })
   },
 
   /**

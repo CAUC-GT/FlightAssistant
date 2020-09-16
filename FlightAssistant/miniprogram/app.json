@@ -30,19 +30,19 @@
     "list": [
       {
         "pagePath": "pages/todo/todo",
-        "selectedIconPath": "image/待办 (1).png",
-        "iconPath": "image/待办.png",
+        "selectedIconPath": "image/todo1.png",
+        "iconPath": "image/todo.png",
         "text": "待办"
       },
       {
-        "selectedIconPath": "image/查询(2).png",
-        "iconPath": "image/查询(1).png",
+        "selectedIconPath": "image/search2.png",
+        "iconPath": "image/search1.png",
         "pagePath": "pages/search/search",
         "text": "查询"
       },
       {
-        "selectedIconPath": "image/个人(1).png",
-        "iconPath": "image/个人.png",
+        "selectedIconPath": "image/personal1.png",
+        "iconPath": "image/personal.png",
         "pagePath": "pages/mine/mine",
         "text": "我的"
       }

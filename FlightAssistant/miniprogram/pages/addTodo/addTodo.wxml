@@ -2,10 +2,10 @@
 	<view class="title">请选择</view>
 	<view class="container1" bindtap="ordinaryTodo">
 		<text class="h1">普通待办</text>
-		<image class="img" src="../../image/待办0.png"></image>
+		<image class="img" src="/image/todo0.png"></image>
 	</view>
 	<view class="container2" bindtap="flightTodo">
 		<text class="h1">航班待办</text>
-		<image class="img" src="../../image/航班.png"></image>
+		<image class="img" src="/image/flight.png"></image>
 	</view>
 </view>

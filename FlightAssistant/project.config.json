@@ -30,7 +30,7 @@
 	},
 	"appid": "wx8b9864172e2a5d59",
 	"projectname": "FlightAssistant",
-	"libVersion": "2.12.1",
+	"libVersion": "2.12.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

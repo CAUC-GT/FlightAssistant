@@ -5,7 +5,7 @@
 
 	<view class="row">
 		<input class="card_item" placeholder="出发地" bindinput="getFlightSrc"></input>
-		<image class="card_img" src="../../image/飞机.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+		<image class="card_img" src="/image/plane.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
 		<input class="card_item" placeholder="目的地" bindinput="getFlightDes"></input>
 	</view>
 
