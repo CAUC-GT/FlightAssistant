@@ -19,7 +19,7 @@
 在本项目GitHub页面中，点击绿色Code按钮，**利用SSH克隆**该库或者**下载Zip文件**，将克隆的文件或者解压后的项目文件导入至*微信开发者工具*中，即可显示源代码。
 
 ## 使用说明
-这是该项目的文件，具体使用说明请点击查看[使用文档]()。
+这是该项目的文件，具体使用说明请点击查看[使用文档]()，或观看[演示视频](http://m.v.qq.com/play.html?cid=&vid=f3152tj10v6&vuid24=lCk%2BLZO9esJFpcZAdbtQWA%3D%3D&url_from=share&second_share=0&share_from=copy&pgid=page_detail&mod_id=mod_toolbar)。
 
 ## 开发者
 [@Sylar47](https://github.com/Sylar47)
